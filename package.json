@@ -1,0 +1,17 @@
+{
+  "name": "emptypointofsale",
+  "version": "1.0.0",
+  "description": "FieldPro is an experimental proof-of-concept Progressive Web App designed to help small contractors manage jobs in the field. It demonstrates a simple offline-capable site with placeholder pages for login and a dashboard.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "FieldPro",
+  "short_name": "FieldPro",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0053a0",
+  "description": "AI-Powered Contractor Assistant"
+}
