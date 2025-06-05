@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 :root {
-  --primary: #0053a0;
-  --secondary: #f7f7f7;
-  --accent: #0dbdff;
+  --primary: #0a2540; /* dark blue similar to Stripe */
+  --secondary: #ffffff;
+  --accent: #635bff; /* soft purple accent */
+  --text: #0a2540;
 }
 * { box-sizing: border-box; }
 body {
@@ -10,31 +11,41 @@ body {
   margin: 0;
   padding: 0;
   background: var(--secondary);
-  color: #333;
+  color: var(--text);
 }
 header {
-  background: var(--primary);
-  color: #fff;
-  padding: 1rem;
+  background: var(--secondary);
+  color: var(--text);
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 nav a {
-  color: #fff;
-  margin-left: 1rem;
+  color: var(--text);
+  margin-left: 1.5rem;
   text-decoration: none;
   font-weight: 600;
 }
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
 .hero {
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: #fff;
   text-align: center;
 }
-.hero h2 {
+.hero-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero h1 {
   margin-top: 0;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  line-height: 1.2;
 }
 .login, .dashboard {
   padding: 2rem;
@@ -62,18 +73,29 @@ button {
 }
 
 /* Marketing page styles */
-.features, .benefits, .pricing {
-  padding: 2rem;
+.features, .benefits, .pricing, .cta-final {
+  padding: 4rem 2rem;
   text-align: center;
 }
 
-.features ul {
-  list-style: none;
-  padding: 0;
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 800px;
+  margin: 2rem auto 0;
 }
 
-.features li {
-  margin: 0.5rem 0;
+.feature-item {
+  flex: 1 1 200px;
+  margin: 1rem;
+  background: #f5f8ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.feature-item h3 {
+  margin-top: 0;
 }
 
 .cta {
@@ -100,4 +122,12 @@ button {
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 160px;
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  background: var(--secondary);
+  color: var(--text);
+  font-size: 0.875rem;
 }
