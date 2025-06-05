@@ -6,10 +6,11 @@
   <title>FieldPro – The Future of Contractor Work</title>
   <link rel="stylesheet" href="/css/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
   <header class="navbar">
-    <div class="container">
+    <div class="container nav-inner">
       <div class="logo">FieldPro</div>
       <nav>
         <a href="#features">Features</a>
@@ -24,13 +25,8 @@
     <div class="gradient-bg"></div>
     <div class="container hero-grid">
       <div class="hero-text">
-        <h1>
-          Built for contractors<br />
-          who get things done.
-        </h1>
-        <p>
-          FieldPro helps small and large teams track jobs, snap receipts, and get paid fast — even offline.
-        </p>
+        <h1>Built for contractors who get things done.</h1>
+        <p>FieldPro helps small and large teams track jobs, snap receipts, and get paid fast—even offline.</p>
         <form class="cta-form">
           <input type="email" placeholder="Enter your email" />
           <button type="submit">Start now →</button>
@@ -45,21 +41,93 @@
   <section id="features" class="features">
     <div class="container">
       <h2 class="section-title">Why FieldPro?</h2>
-      <div class="features-grid">
-        <div class="feature">
-          <img src="/images/voice-to-text.png" alt="Voice-to-text in use" />
+      <div class="feature-block" data-aos="fade-up">
+        <div class="feature-text">
           <h3>Voice-to-Text</h3>
-          <p>Log notes with your voice on the job site — no typing needed.</p>
+          <p>Log notes with your voice on the job site—no typing needed.</p>
         </div>
-        <div class="feature">
-          <img src="/images/offline-mode.png" alt="Offline mode preview" />
+        <div class="feature-img">
+          <img src="/images/voice-to-text.png" alt="Voice-to-text in use" />
+        </div>
+      </div>
+      <div class="feature-block reverse" data-aos="fade-up">
+        <div class="feature-text">
           <h3>Offline Mode</h3>
           <p>FieldPro works without a signal and syncs automatically when you're back online.</p>
         </div>
-        <div class="feature">
-          <img src="/images/instant-invoice.png" alt="Sending instant invoices" />
+        <div class="feature-img">
+          <img src="/images/offline-mode.png" alt="Offline mode preview" />
+        </div>
+      </div>
+      <div class="feature-block" data-aos="fade-up">
+        <div class="feature-text">
           <h3>Instant Invoices</h3>
-          <p>Send, print, or collect payment in seconds — all from the app.</p>
+          <p>Send, print, or collect payment in seconds—all from the app.</p>
+        </div>
+        <div class="feature-img">
+          <img src="/images/instant-invoice.png" alt="Sending instant invoices" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Trusted by Pros</h2>
+      <div class="carousel">
+        <div class="slide active">
+          <p class="quote">“FieldPro saves us hours every week. Offline mode is a lifesaver.”</p>
+          <span class="author">— Alex, HVAC Contractor</span>
+        </div>
+        <div class="slide">
+          <p class="quote">“Invoicing clients on-site has improved our cash flow immensely.”</p>
+          <span class="author">— Jamie, Electrician</span>
+        </div>
+        <div class="slide">
+          <p class="quote">“The voice notes let me keep my hands free on the job.”</p>
+          <span class="author">— Sam, Construction Manager</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2 class="section-title">Pricing</h2>
+      <label class="toggle">
+        <input type="checkbox" id="planToggle" />
+        <span>Bill yearly and save 20%</span>
+      </label>
+      <div class="pricing-grid">
+        <div class="plan">
+          <h3>Starter</h3>
+          <div class="price" data-monthly="19" data-yearly="190">$19<span>/mo</span></div>
+          <ul>
+            <li>Unlimited jobs</li>
+            <li>Offline access</li>
+            <li>Email support</li>
+          </ul>
+          <button>Choose Plan</button>
+        </div>
+        <div class="plan featured">
+          <h3>Pro</h3>
+          <div class="price" data-monthly="39" data-yearly="390">$39<span>/mo</span></div>
+          <ul>
+            <li>Everything in Starter</li>
+            <li>Voice-to-text</li>
+            <li>Priority support</li>
+          </ul>
+          <button>Choose Plan</button>
+        </div>
+        <div class="plan">
+          <h3>Enterprise</h3>
+          <div class="price" data-monthly="79" data-yearly="790">$79<span>/mo</span></div>
+          <ul>
+            <li>All Pro features</li>
+            <li>Custom integrations</li>
+            <li>Dedicated rep</li>
+          </ul>
+          <button>Contact Us</button>
         </div>
       </div>
     </div>
@@ -70,5 +138,10 @@
       <p>&copy; 2025 FieldPro. All rights reserved.</p>
     </div>
   </footer>
+  <script src="/js/app.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+  </script>
 </body>
 </html>

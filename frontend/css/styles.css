@@ -68,7 +68,7 @@ nav a {
 .hero-stripe {
   position: relative;
   overflow: hidden;
-  padding: 6rem 0 6rem;
+  padding: 6rem 0;
   background: var(--white);
 }
 
@@ -170,40 +170,149 @@ nav a {
   margin-bottom: 3rem;
 }
 
-.features-grid {
+.feature-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.feature-block.reverse .feature-text {
+  order: 2;
+}
+
+.feature-block.reverse .feature-img {
+  order: 1;
+}
+
+.feature-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-text p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.feature-img img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 5rem 0;
+  background: var(--white);
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.quote {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.author {
+  display: block;
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+/* Pricing */
+.pricing {
+  padding: 5rem 0;
+  background: var(--background);
+  text-align: center;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: .5rem;
+  font-weight: 600;
+}
+
+.pricing-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
 }
 
-.feature {
+.plan {
   background: #fff;
   border-radius: 12px;
   padding: 2rem;
-  text-align: center;
   width: 280px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.feature:hover {
-  transform: translateY(-8px);
+.plan.featured {
+  border: 2px solid var(--accent);
 }
 
-.feature img {
-  width: 100%;
-  height: 180px;
-  max-width: 320px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.plan h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
 }
 
-.feature h3 {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
+.plan .price {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 1rem 0;
+}
+
+.plan .price span {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+}
+
+.plan li {
+  margin-bottom: .5rem;
+}
+
+.plan button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: .75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.plan button:hover {
+  background: #061a33;
 }
 
 /* Footer */
@@ -213,4 +322,10 @@ nav a {
   text-align: center;
   padding: 2rem 0;
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
 }
