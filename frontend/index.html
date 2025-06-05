@@ -1,117 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="manifest" href="/manifest.json" />
-<link rel="stylesheet" href="/css/styles.css" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
-<script src="https://kit.fontawesome.com/a2e499c01c.js" crossorigin="anonymous"></script>
-<title>FieldPro</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FieldPro – The Future of Contractor Work</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <a href="#" class="logo">FieldPro</a>
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a href="login.html">Login</a>
-    </nav>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">FieldPro</div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="login.html" class="btn btn-outline">Login</a>
+      </nav>
+    </div>
   </header>
-  <main>
-    <section class="hero">
-      <div class="wave"></div>
-      <div class="hero-content">
-        <h1>Manage Jobs. Get Paid. Stress-Free.</h1>
-        <p>The AI-powered assistant built for contractors.</p>
-        <div class="cta-group">
-          <a class="cta primary" href="login.html"><i class="fas fa-rocket"></i> Start Free</a>
-          <a class="cta secondary" href="#features"><i class="fas fa-play"></i> Watch Demo</a>
-        </div>
+
+  <section class="hero-stripe">
+    <div class="gradient-bg"></div>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>
+          Built for contractors<br />
+          who get things done.
+        </h1>
+        <p>
+          FieldPro helps small and large teams track jobs, snap receipts, and get paid fast — even offline.
+        </p>
+        <form class="cta-form">
+          <input type="email" placeholder="Enter your email" />
+          <button type="submit">Start now →</button>
+        </form>
       </div>
       <div class="hero-image">
-        <img src="https://placehold.co/500x400?text=App+Preview" alt="App preview" />
+        <img src="/images/voice-to-text.png" alt="App Preview UI" />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="features" class="features">
-      <h2>Everything you need</h2>
-      <div class="feature-grid">
-        <div class="feature-item">
-          <span class="badge">Voice Commands</span>
-          <i class="fas fa-microphone"></i>
-          <h3>Hands-free notes</h3>
-          <p>Log work while you tackle the job.</p>
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Why FieldPro?</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <img src="/images/voice-to-text.png" alt="Voice-to-text in use" />
+          <h3>Voice-to-Text</h3>
+          <p>Log notes with your voice on the job site — no typing needed.</p>
         </div>
-        <div class="feature-item">
-          <span class="badge">Offline Sync</span>
-          <i class="fas fa-sync"></i>
-          <h3>Always available</h3>
-          <p>Capture data even without a connection.</p>
+        <div class="feature">
+          <img src="/images/offline-mode.png" alt="Offline mode preview" />
+          <h3>Offline Mode</h3>
+          <p>FieldPro works without a signal and syncs automatically when you're back online.</p>
         </div>
-        <div class="feature-item">
-          <span class="badge">Auto Invoicing</span>
-          <i class="fas fa-file-invoice"></i>
-          <h3>Instant paperwork</h3>
-          <p>Invoices generated from your logs automatically.</p>
+        <div class="feature">
+          <img src="/images/instant-invoice.png" alt="Sending instant invoices" />
+          <h3>Instant Invoices</h3>
+          <p>Send, print, or collect payment in seconds — all from the app.</p>
         </div>
       </div>
-      <div class="demo-box">
-        <p><strong>Try it:</strong> record a quick voice note or snap an image.</p>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="benefits">
-      <h2>Why FieldPro?</h2>
-      <p>Spend less time on paperwork and more time on the job.</p>
-    </section>
-
-    <section class="testimonials">
-      <h2>Loved by the pros</h2>
-      <div class="slider">
-        <div class="slide active">
-          <img src="https://placehold.co/80x80" class="avatar" alt="contractor" />
-          <blockquote>"FieldPro made invoicing painless."</blockquote>
-        </div>
-        <div class="slide">
-          <img src="https://placehold.co/80x80" class="avatar" alt="contractor" />
-          <blockquote>"The voice commands save me hours every week."</blockquote>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing" class="pricing">
-      <h2>Flexible pricing</h2>
-      <div class="plan-toggle">
-        <span>Monthly</span>
-        <label class="switch">
-          <input type="checkbox" id="planToggle" />
-          <span class="slider"></span>
-        </label>
-        <span>Yearly</span>
-      </div>
-      <div class="plans">
-        <div class="plan">
-          <h4>Starter</h4>
-          <p class="price" data-monthly="9.99" data-yearly="99">$9.99<span>/mo</span></p>
-          <button class="cta">Choose</button>
-        </div>
-        <div class="plan">
-          <h4>Pro</h4>
-          <p class="price" data-monthly="29.99" data-yearly="299">$29.99<span>/mo</span></p>
-          <button class="cta">Choose</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-final">
-      <h2>Ready to streamline your field work?</h2>
-      <a class="cta" href="login.html">Create your free account</a>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2023 FieldPro</p>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 FieldPro. All rights reserved.</p>
+    </div>
   </footer>
-  <script src="/js/app.js"></script>
 </body>
 </html>
