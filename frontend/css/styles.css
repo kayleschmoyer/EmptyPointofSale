@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap');
 :root {
   --primary: #0a2540; /* dark blue similar to Stripe */
   --secondary: #ffffff;
   --accent: #635bff; /* soft purple accent */
   --text: #0a2540;
+  --glass-bg: rgba(255,255,255,0.25);
+  --glass-blur: 12px;
 }
 * { box-sizing: border-box; }
 body {
@@ -12,6 +14,10 @@ body {
   padding: 0;
   background: var(--secondary);
   color: var(--text);
+}
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.5px;
 }
 header {
   background: var(--secondary);
@@ -33,19 +39,47 @@ nav a {
   font-weight: 600;
 }
 .hero {
-  padding: 6rem 2rem;
+  position: relative;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: #fff;
-  text-align: center;
+  overflow: hidden;
 }
-.hero-inner {
-  max-width: 600px;
-  margin: 0 auto;
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.3" d="M0,160L48,149.3C96,139,192,117,288,122.7C384,128,480,160,576,176C672,192,768,192,864,170.7C960,149,1056,107,1152,117.3C1248,128,1344,192,1392,224L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  animation: wave 8s linear infinite;
+}
+@keyframes wave {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.hero-content {
+  max-width: 500px;
+  z-index: 1;
+}
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 .hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
   margin-top: 0;
-  font-size: 2.5rem;
-  line-height: 1.2;
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
 }
 .login, .dashboard {
   padding: 2rem;
@@ -89,9 +123,38 @@ button {
 .feature-item {
   flex: 1 1 200px;
   margin: 1rem;
-  background: #f5f8ff;
-  padding: 1.5rem;
-  border-radius: 8px;
+  background: var(--glass-bg);
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+.feature-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.feature-item i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.badge {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
 }
 
 .feature-item h3 {
@@ -107,6 +170,23 @@ button {
   text-decoration: none;
   border-radius: 4px;
   font-weight: 600;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.cta.primary { background: linear-gradient(135deg, var(--accent), #9d00ff); }
+.cta.secondary { background: rgba(255,255,255,0.2); }
+.cta:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+}
+
+.demo-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .pricing .plans {
@@ -115,13 +195,82 @@ button {
   justify-content: center;
 }
 
+.plan-toggle {
+  margin: 1rem auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input { display: none; }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+.switch input:checked + .slider {
+  background-color: var(--accent);
+}
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
 .pricing .plan {
-  background: #fff;
+  background: var(--glass-bg);
   margin: 0.5rem;
-  padding: 1rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 160px;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  width: 180px;
+  text-align: center;
+}
+
+.testimonials {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.slider {
+  position: relative;
+  max-width: 500px;
+  margin: 2rem auto 0;
+}
+
+.slide {
+  display: none;
+  font-style: italic;
+}
+.slide.active {
+  display: block;
+}
+.avatar {
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
 footer {

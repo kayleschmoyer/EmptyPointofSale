@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="manifest" href="/manifest.json" />
 <link rel="stylesheet" href="/css/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+<script src="https://kit.fontawesome.com/a2e499c01c.js" crossorigin="anonymous"></script>
 <title>FieldPro</title>
 </head>
 <body>
@@ -18,10 +20,17 @@
   </header>
   <main>
     <section class="hero">
-      <div class="hero-inner">
-        <h1>FieldPro helps contractors get paid faster</h1>
-        <p>Track jobs, log materials and send invoices from anywhere.</p>
-        <a class="cta" href="login.html">Start for free</a>
+      <div class="wave"></div>
+      <div class="hero-content">
+        <h1>Manage Jobs. Get Paid. Stress-Free.</h1>
+        <p>The AI-powered assistant built for contractors.</p>
+        <div class="cta-group">
+          <a class="cta primary" href="login.html"><i class="fas fa-rocket"></i> Start Free</a>
+          <a class="cta secondary" href="#features"><i class="fas fa-play"></i> Watch Demo</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://placehold.co/500x400?text=App+Preview" alt="App preview" />
       </div>
     </section>
 
@@ -29,17 +38,26 @@
       <h2>Everything you need</h2>
       <div class="feature-grid">
         <div class="feature-item">
-          <h3>Voice notes</h3>
-          <p>Log work hands-free on site.</p>
+          <span class="badge">Voice Commands</span>
+          <i class="fas fa-microphone"></i>
+          <h3>Hands-free notes</h3>
+          <p>Log work while you tackle the job.</p>
         </div>
         <div class="feature-item">
-          <h3>Offline first</h3>
+          <span class="badge">Offline Sync</span>
+          <i class="fas fa-sync"></i>
+          <h3>Always available</h3>
           <p>Capture data even without a connection.</p>
         </div>
         <div class="feature-item">
-          <h3>Receipts</h3>
-          <p>Snap photos of materials and store them securely.</p>
+          <span class="badge">Auto Invoicing</span>
+          <i class="fas fa-file-invoice"></i>
+          <h3>Instant paperwork</h3>
+          <p>Invoices generated from your logs automatically.</p>
         </div>
+      </div>
+      <div class="demo-box">
+        <p><strong>Try it:</strong> record a quick voice note or snap an image.</p>
       </div>
     </section>
 
@@ -48,20 +66,40 @@
       <p>Spend less time on paperwork and more time on the job.</p>
     </section>
 
+    <section class="testimonials">
+      <h2>Loved by the pros</h2>
+      <div class="slider">
+        <div class="slide active">
+          <img src="https://placehold.co/80x80" class="avatar" alt="contractor" />
+          <blockquote>"FieldPro made invoicing painless."</blockquote>
+        </div>
+        <div class="slide">
+          <img src="https://placehold.co/80x80" class="avatar" alt="contractor" />
+          <blockquote>"The voice commands save me hours every week."</blockquote>
+        </div>
+      </div>
+    </section>
+
     <section id="pricing" class="pricing">
-      <h2>Simple pricing</h2>
+      <h2>Flexible pricing</h2>
+      <div class="plan-toggle">
+        <span>Monthly</span>
+        <label class="switch">
+          <input type="checkbox" id="planToggle" />
+          <span class="slider"></span>
+        </label>
+        <span>Yearly</span>
+      </div>
       <div class="plans">
         <div class="plan">
-          <h4>Free Trial</h4>
-          <p>$0 for 14 days</p>
-        </div>
-        <div class="plan">
           <h4>Starter</h4>
-          <p>$9.99/month</p>
+          <p class="price" data-monthly="9.99" data-yearly="99">$9.99<span>/mo</span></p>
+          <button class="cta">Choose</button>
         </div>
         <div class="plan">
           <h4>Pro</h4>
-          <p>$29.99/month</p>
+          <p class="price" data-monthly="29.99" data-yearly="299">$29.99<span>/mo</span></p>
+          <button class="cta">Choose</button>
         </div>
       </div>
     </section>
