@@ -8,82 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <style>
-    .voice, .offline, .invoice {
-      color: white;
-      padding: 3rem 1.5rem;
-    }
-
-    .voice {
-      background: radial-gradient(circle at 20% 40%, rgba(99, 102, 241, 0.4), transparent),
-                  radial-gradient(circle at 80% 50%, rgba(14, 165, 233, 0.4), transparent),
-                  linear-gradient(135deg, #ff80b5 0%, #9089fc 100%);
-    }
-
-    .offline {
-      background: radial-gradient(circle at 30% 30%, rgba(255, 214, 102, 0.4), transparent),
-                  radial-gradient(circle at 70% 50%, rgba(255, 159, 67, 0.4), transparent),
-                  linear-gradient(135deg, #ffe259 0%, #ffa751 100%);
-    }
-
-    .invoice {
-      background: radial-gradient(circle at 40% 30%, rgba(52, 199, 89, 0.3), transparent),
-                  radial-gradient(circle at 70% 60%, rgba(88, 214, 141, 0.4), transparent),
-                  linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    }
-
-    .split {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .split.reverse {
-      flex-direction: row-reverse;
-    }
-
-    .feature-text, .feature-img {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .feature-img img {
-      width: 100%;
-      height: auto;
-      border-radius: 1rem;
-    }
-
-    .feature-text h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .feature-text p {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: rgba(255,255,255,0.85);
-    }
-
-    @media (max-width: 768px) {
-      .split {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem 1rem;
-      }
-
-      .feature-text h2 {
-        font-size: 1.5rem;
-      }
-
-      .feature-text p {
-        font-size: 0.95rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -116,39 +40,45 @@
     </div>
   </section>
 
-  <section id="features" class="features">
+  <section id="features">
 
-    <div class="feature-block split voice" data-aos="fade-up">
-      <div class="feature-text">
-        <h2>Voice-to-Text</h2>
-        <p>Log notes with your voice on the job site—no typing needed.</p>
-      </div>
-      <div class="feature-img">
-        <img src="/images/voice-to-text.png" alt="Voice-to-text in use" />
+    <div class="voice">
+      <div class="feature-block split" data-aos="fade-up">
+        <div class="feature-text">
+          <h2>Voice-to-Text</h2>
+          <p>Log notes with your voice on the job site—no typing needed.</p>
+        </div>
+        <div class="feature-img">
+          <img src="/images/voice-to-text.png" alt="Voice-to-text in use" />
+        </div>
       </div>
     </div>
-
-    <div class="feature-block split reverse offline" data-aos="fade-up">
-      <div class="feature-text">
-        <h2>Offline Mode</h2>
-        <p>FieldPro works without a signal and syncs automatically when you're back online.</p>
-      </div>
-      <div class="feature-img">
-        <img src="/images/offline-mode.png" alt="Offline mode preview" />
-      </div>
-    </div>
-
-    <div class="feature-block split invoice" data-aos="fade-up">
-      <div class="feature-text">
-        <h2>Instant Invoices</h2>
-        <p>Send, print, or collect payment in seconds—all from the app.</p>
-      </div>
-      <div class="feature-img">
-        <img src="/images/instant-invoice.png" alt="Sending instant invoices" />
+  
+    <div class="offline">
+      <div class="feature-block split reverse" data-aos="fade-up">
+        <div class="feature-text">
+          <h2>Offline Mode</h2>
+          <p>FieldPro works without a signal and syncs automatically when you're back online.</p>
+        </div>
+        <div class="feature-img">
+          <img src="/images/offline-mode.png" alt="Offline mode preview" />
+        </div>
       </div>
     </div>
-
-  </section>
+  
+    <div class="invoice">
+      <div class="feature-block split" data-aos="fade-up">
+        <div class="feature-text">
+          <h2>Instant Invoices</h2>
+          <p>Send, print, or collect payment in seconds—all from the app.</p>
+        </div>
+        <div class="feature-img">
+          <img src="/images/instant-invoice.png" alt="Sending instant invoices" />
+        </div>
+      </div>
+    </div>
+  
+  </section>  
 
   <section id="testimonials" class="testimonials">
     <div class="container">
